@@ -13,6 +13,9 @@
     "prettier": "^3.2.5",
     "turbo": "latest"
   },
+  "prisma": {
+    "schema": "packages/database/prisma/schema.prisma"    
+  },
   "packageManager": "pnpm@8.9.0",
   "engines": {
     "node": ">=18"
