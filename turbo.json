@@ -6,7 +6,7 @@
   "DIRECT_URL",
   "GOOGLE_CLIENT_ID",
   "GOOGLE_CLIENT_SECRET",        
-  "NEXTAUTH_SECRET_PRISMA",       
+  "NEXTAUTH_SECRET",       
   "NEXTAUTH_URL" 
 ],
   "pipeline": {
@@ -25,7 +25,7 @@
       "dependsOn": ["^lint"]
     },
     "dev": {
-      "dependsOn": ["^db:generate"],
+      "dependsOn": ["^generate"],
       "cache": false
     }
   }

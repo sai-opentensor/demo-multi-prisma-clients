@@ -1,4 +1,5 @@
 import { prisma } from '@repo/database';
+import { getServerSession } from 'next-auth';
 import { NextRequest, NextResponse } from 'next/server'
 
 
@@ -23,12 +24,13 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
+  const session = await getServerSession()
+  console.log(session)
 
-  const user = await prisma.apiUser.findUnique({
-    where: {
-      email: 'skiran017@gmail.com'
-    }
-  })
+  if (!session) return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 })
+
+  const user = await prisma.user.findUnique({ where: { email: String(session?.user?.email) } })
+
   return NextResponse.json({ success: true, data: user }, { status: 200 })
 
 }

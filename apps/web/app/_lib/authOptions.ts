@@ -16,14 +16,14 @@ export const authOptionConfig = {
   //   signOut: '/'
   // },
   callbacks: {
-    async session({ session, user, token }) {
+    async session({ session, user }) {
       console.log({ session })
       console.log({ user })
-      console.log({ token })
       return session
     }
   },
   providers: [
+
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!
