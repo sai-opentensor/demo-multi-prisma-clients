@@ -23,9 +23,15 @@ importers:
 
   apps/docs:
     dependencies:
+      '@auth/prisma-adapter':
+        specifier: ^2.1.0
+        version: 2.1.0(@prisma/client@5.13.0)
       '@next/eslint-plugin-next':
         specifier: ^14.1.1
         version: 14.1.1
+      '@repo/database':
+        specifier: workspace:^
+        version: link:../../packages/database
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
@@ -53,6 +59,15 @@ importers:
       next:
         specifier: ^14.1.1
         version: 14.1.1(react-dom@18.2.0)(react@18.2.0)
+      next-auth:
+        specifier: ^4.24.7
+        version: 4.24.7(next@14.1.1)(react-dom@18.2.0)(react@18.2.0)
+      next-auth-prisma-adapter:
+        specifier: ^0.1.0
+        version: 0.1.0(@prisma/client@5.13.0)(next-auth@4.24.7)
+      prisma:
+        specifier: 5.13.0
+        version: 5.13.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -3526,6 +3541,16 @@ packages:
     resolution: {integrity: sha512-dBpDMdxv9Irdq66304OLfEmQ9tbNRFnFTuZiLo+bD+r332bBmMJ8GBLXklIXXgxd3+v9+KUnZaUR5PJMa75Gsg==}
     engines: {node: '>= 0.4.0'}
     dev: true
+
+  /next-auth-prisma-adapter@0.1.0(@prisma/client@5.13.0)(next-auth@4.24.7):
+    resolution: {integrity: sha512-8FvRNe1Ho/yC54Q36LzozA9hSnONhLm4BVGjgDKyiBCnUGIbLYwCCqKqiU9hLjGFyRhmkeXcnKbz/W2ohgVa/A==}
+    peerDependencies:
+      '@prisma/client': '>3'
+      next-auth: '>=4'
+    dependencies:
+      '@prisma/client': 5.13.0(prisma@5.13.0)
+      next-auth: 4.24.7(next@14.1.1)(react-dom@18.2.0)(react@18.2.0)
+    dev: false
 
   /next-auth@4.24.7(next@14.1.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-iChjE8ov/1K/z98gdKbn2Jw+2vLgJtVV39X+rCP5SGnVQuco7QOr19FRNGMIrD8d3LYhHWV9j9sKLzq1aDWWQQ==}
