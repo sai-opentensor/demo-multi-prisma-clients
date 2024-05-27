@@ -6,13 +6,11 @@
   },
   "types": "./index.ts",
   "scripts": {
-    "db:generate": "prisma generate",
+    "generate": "prisma generate",
     "db:push": "prisma db push --skip-generate"
   },
   "dependencies": {
-    "@prisma/client": "5.13.0"
-  },
-  "devDependencies": {
+    "@prisma/client": "5.13.0",
     "prisma": "5.13.0"
   }
 }
